@@ -85,3 +85,16 @@ To strictly follow the Don't Repeat Yourself (DRY) principle, extract reusable c
 - Treat documentation inside `docs/` as the single source of truth for existing workflows, data structures, and domain logic.
 - Verify whether the assigned task impacts or updates existing documentation and align the implementation accordingly.
 ```
+
+## การประเมินและวางแผนการเขียน Automated Test ตามหลัก High-ROI สำหรับการพัฒนาฟีเจอร์ใหม่
+
+```
+## High-ROI Pragmatic Testing Strategy
+
+- Evaluate test file creation (`*.test.ts`, `*_test.go`, etc.) against High-ROI testing principles before generating unit or integration tests for any new feature.
+- Target test coverage strictly on high-impact critical paths:
+  - Backend: Authentication/RBAC authorization rules, financial and domain business logic, state machine transitions, and complex data mappers.
+  - Frontend: Non-trivial custom hooks, complex reducers or state managers, cross-field form validations, and data transformation utilities.
+- Omit or maintain minimal testing for low-ROI areas, including simple CRUD handlers without domain logic, passthrough data transfer objects (DTOs), and static presentation UI components.
+- Outline a concise proposal of essential test cases covering critical paths prior to implementing actual test suites to maximize efficiency and guarantee targeted system accuracy.
+```
